@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #070b14;
+    color: #e2e8f0;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b1120;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00f0ff88;
+}
+
+/* Tactical HUD & Glow Styles */
+.glow-cyan {
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.6), 0 0 20px rgba(0, 240, 255, 0.3);
+}
+
+.glow-red {
+  text-shadow: 0 0 10px rgba(255, 0, 60, 0.7), 0 0 25px rgba(255, 0, 60, 0.4);
+}
+
+.glow-amber {
+  text-shadow: 0 0 10px rgba(255, 183, 0, 0.7), 0 0 20px rgba(255, 183, 0, 0.4);
+}
+
+.glow-green {
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.7), 0 0 20px rgba(0, 255, 136, 0.4);
+}
+
+.border-glow-cyan {
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.25), inset 0 0 15px rgba(0, 240, 255, 0.05);
+}
+
+.border-glow-red {
+  box-shadow: 0 0 20px rgba(255, 0, 60, 0.4), inset 0 0 15px rgba(255, 0, 60, 0.15);
+}
+
+.border-glow-amber {
+  box-shadow: 0 0 15px rgba(255, 183, 0, 0.3), inset 0 0 10px rgba(255, 183, 0, 0.08);
+}
+
+.border-glow-green {
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.25), inset 0 0 10px rgba(0, 255, 136, 0.05);
+}
+
+/* Aviation Cockpit HUD Grid Lines */
+.cockpit-panel {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(11, 17, 32, 0.95) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(51, 65, 85, 0.5);
+  position: relative;
+}
+
+.cockpit-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.3), transparent);
+}
+
+/* Subtle CRT Scanline effect (pure CSS) */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Leaflet Dark Tiles filter */
+.dark-map .leaflet-tile-pane {
+  filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+}
+
+.leaflet-container {
+  background-color: #070b14 !important;
+  font-family: inherit;
+}
